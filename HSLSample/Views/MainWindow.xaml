@@ -1,0 +1,17 @@
+﻿<Window x:Class="HSLSample.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+            <GradientStop Color="Yellow" Offset="0.0" />
+            <GradientStop Color="Red" Offset="0.25" />
+            <GradientStop Color="Blue" Offset="0.75" />
+            <GradientStop Color="LimeGreen" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+    </Grid>
+</Window>
