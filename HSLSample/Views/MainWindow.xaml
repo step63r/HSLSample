@@ -4,14 +4,89 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525">
-    <Window.Background>
-        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
-            <GradientStop Color="Yellow" Offset="0.0" />
-            <GradientStop Color="Red" Offset="0.25" />
-            <GradientStop Color="Blue" Offset="0.75" />
-            <GradientStop Color="LimeGreen" Offset="1.0" />
-        </LinearGradientBrush>
-    </Window.Background>
-    <Grid>
+    <Window.Resources>
+        <Storyboard x:Key="GradientAnimation" RepeatBehavior="Forever">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FF800080"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FF0000FF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FF00FFFF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FF008000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FFFFFF00"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FFFFA500"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FFFF0000"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FFFF0000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FF800080"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FF0000FF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FF00FFFF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FF008000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FFFFFF00"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FFFFA500"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FFFFA500"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FFFF0000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FF800080"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FF0000FF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FF00FFFF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FF008000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FFFFFF00"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FFFFFF00"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FFFFA500"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FFFF0000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FF800080"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FF0000FF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FF00FFFF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FF008000"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[4].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FF008000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FFFFFF00"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FFFFA500"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FFFF0000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FF800080"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FF0000FF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FF00FFFF"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[5].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FF00FFFF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FF008000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FFFFFF00"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FFFFA500"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FFFF0000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FF800080"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FF0000FF"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[6].(GradientStop.Color)" Storyboard.TargetName="RootGrid">
+                <EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FF0000FF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.10" Value="#FF00FFFF"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FF008000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.20" Value="#FFFFFF00"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FFFFA500"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.30" Value="#FFFF0000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.35" Value="#FF800080"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource GradientAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="RootGrid">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFFFFFFF" Offset="0.0000" />
+                <GradientStop Color="#FFFFFFFF" Offset="0.1666" />
+                <GradientStop Color="#FFFFFFFF" Offset="0.3332" />
+                <GradientStop Color="#FFFFFFFF" Offset="0.4998" />
+                <GradientStop Color="#FFFFFFFF" Offset="0.6664" />
+                <GradientStop Color="#FFFFFFFF" Offset="0.8330" />
+                <GradientStop Color="#FFFFFFFF" Offset="1.0000" />
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>
